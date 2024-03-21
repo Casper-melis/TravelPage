@@ -146,6 +146,7 @@
                 <Property Name="FlightPrice" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="variable"/>
                 <Property Name="CurrencyCode" Type="Edm.String" Nullable="false" MaxLength="5"/>
                 <Property Name="LocalLastChangedAt" Type="Edm.DateTimeOffset" Precision="7"/>
+                <Property Name="VIPStatus" Type="Edm.String" Nullable="false" MaxLength="1"/>
                 <Property Name="HasDraftEntity" Type="Edm.Boolean" Nullable="false"/>
                 <Property Name="DraftEntityCreationDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
                 <Property Name="DraftEntityLastChangeDateTime" Type="Edm.DateTimeOffset" Precision="7"/>
@@ -1180,7 +1181,7 @@
                 <Annotation Term="SAP__common.IsUpperCase"/>
                 <Annotation Term="SAP__common.ValueListReferences">
                     <Collection>
-                        <String>../../../../srvd_f4/sap/zi_rap_carrier_12356/0001;ps='srvd-zui_rap_travel_12356-0001';va='com.sap.gateway.srvd.zui_rap_travel_12356.v0001.et-zc_rap_booking_12356.carrierid'/$metadata</String>
+                        <String>../../../../srvd_f4/dmo/i_carrier/0001;ps='srvd-zui_rap_travel_12356-0001';va='com.sap.gateway.srvd.zui_rap_travel_12356.v0001.et-zc_rap_booking_12356.carrierid'/$metadata</String>
                     </Collection>
                 </Annotation>
                 <Annotation Term="SAP__common.Label" String="Airline ID"/>
@@ -1224,6 +1225,10 @@
                 <Annotation Term="SAP__UI.Hidden"/>
                 <Annotation Term="SAP__common.Label" String="Time Stamp"/>
                 <Annotation Term="SAP__common.QuickInfo" String="UTC Time Stamp in Long Form (YYYYMMDDhhmmssmmmuuun)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.BookingType/VIPStatus">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Single-Character Flag"/>
             </Annotations>
             <Annotations Target="SAP__self.BookingType/HasDraftEntity">
                 <Annotation Term="SAP__core.Computed"/>
@@ -1429,6 +1434,10 @@
                             <PropertyValue Property="Value" Path="FlightPrice"/>
                         </Record>
                         <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="VIPStatus"/>
+                            <PropertyValue Property="Value" Path="VIPStatus"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Label" String="Booking UUID"/>
                             <PropertyValue Property="Value" Path="BookingUUID"/>
                         </Record>
@@ -1466,6 +1475,10 @@
                         </Record>
                         <Record Type="SAP__UI.DataField">
                             <PropertyValue Property="Value" Path="FlightPrice"/>
+                        </Record>
+                        <Record Type="SAP__UI.DataField">
+                            <PropertyValue Property="Label" String="VIPStatus"/>
+                            <PropertyValue Property="Value" Path="VIPStatus"/>
                         </Record>
                         <Record Type="SAP__UI.DataFieldForAction">
                             <PropertyValue Property="Label" String="Demote"/>
