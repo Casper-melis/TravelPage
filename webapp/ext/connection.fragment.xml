@@ -1,0 +1,49 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified">
+
+<Table id="connectionsTable" items="{/Connection}">
+ <headerToolbar>
+            <Toolbar id="connectionsListToolbar">
+                <Title id="connectionsListTitle" text="Connections"/>
+            </Toolbar>
+        </headerToolbar>
+        <columns>
+            <Column id="AirlineId">
+                <Text id="AirlineIdText" text="Airline"/>
+            </Column>
+            <Column id="ConnectionId">
+                <Text id="ConnectionText" text="Connection ID"/>
+            </Column>
+            
+            <Column id="DepartureTimeColumn">
+                <Text id="DepartureTimeText" text="Departure Time"/>
+            </Column>
+            <Column id="arrivalColumn">
+                <Text id="arrivalTimeText" text="Arrival Time"/>
+            </Column>
+            <Column id="DepartureAirportColumn">
+                <Text id="DepartureAirportText" text="Departure Airport"/>
+            </Column>
+            <Column id="DestinationAirportColumn">
+                <Text id="DestinationAirportText" text="Destination Airport"/>
+            </Column>
+            <Column id="DistanceColumn">
+                <Text id="DistanceText" text= "Distance"></Text>
+            </Column>
+       
+        </columns>
+        <items>
+            <ColumnListItem id="bookingListItem">
+                <cells>
+                    <Text id="AirlineIDCellvalue" text="({AirlineID})"></Text>
+                    <Text id="ConnectionIdCellValue" text="{ConnectionID}"/>
+                    <Text id="DepartureTimeCellValue" text="{DepartureTime}"/>
+                    <Text id="customerNameCellValue" text="{ArrivalTime}"/>
+                    <Text id="DepartureAirportCellValue" text="{DepartureAirport}"/>
+                    <Text id="DestinationAirportCellValue" text="{DestinationAirport}"/>
+                    <Text id="DistanceCellValue" text="{Distance} {DistanceUnit}"/>
+    
+                </cells>
+            </ColumnListItem>
+        </items>
+</Table>
+</core:FragmentDefinition>

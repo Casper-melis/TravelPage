@@ -93,7 +93,6 @@
       "css": []
     },
     "routing": {
-      "config": {},
       "routes": [
         {
           "pattern": ":?query:",
@@ -145,6 +144,11 @@
                     "route": "BookingObjectPage"
                   }
                 }
+              },
+              "content": {
+                "body": {
+                  "sections": {}
+                }
               }
             }
           }
@@ -156,11 +160,25 @@
           "options": {
             "settings": {
               "editableHeaderContent": false,
-              "contextPath": "/Travel/_Booking"
+              "contextPath": "/Travel/_Booking",
+              "content": {
+                "body": {
+                  "sections": {
+                    "connection": {
+                      "template": "sap.fe.demo.travelpage.ext.connection",
+                      "position": {
+                        "placement": "After",
+                        "anchor": "Booking"
+                      },
+                      "title": "Connections",
+                      "type": "XMLFragment"
+                    }
+                  }
+                }
+              }
             }
           }
         }
-
       }
     }
   },
