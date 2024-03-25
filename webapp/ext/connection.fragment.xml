@@ -1,7 +1,6 @@
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified">
-
-<Table id="connectionsTable" items="{/Connection}">
- <headerToolbar>
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:u="sap.ui.unified" xmlns:macros="sap.fe.macros" controllerName="sap.fe.demo.travelpage.etx.connection">
+    <Table id="connectionsTable">
+        <headerToolbar>
             <Toolbar id="connectionsListToolbar">
                 <Title id="connectionsListTitle" text="Connections"/>
             </Toolbar>
@@ -13,7 +12,7 @@
             <Column id="ConnectionId">
                 <Text id="ConnectionText" text="Connection ID"/>
             </Column>
-            
+        
             <Column id="DepartureTimeColumn">
                 <Text id="DepartureTimeText" text="Departure Time"/>
             </Column>
@@ -27,23 +26,22 @@
                 <Text id="DestinationAirportText" text="Destination Airport"/>
             </Column>
             <Column id="DistanceColumn">
-                <Text id="DistanceText" text= "Distance"></Text>
+                <Text id="DistanceText" text="Distance"/>
             </Column>
-       
+            
         </columns>
         <items>
-            <ColumnListItem id="bookingListItem">
+            <ColumnListItem id="ConnnectionListItem">
                 <cells>
-                    <Text id="AirlineIDCellvalue" text="({AirlineID})"></Text>
-                    <Text id="ConnectionIdCellValue" text="{ConnectionID}"/>
-                    <Text id="DepartureTimeCellValue" text="{DepartureTime}"/>
-                    <Text id="customerNameCellValue" text="{ArrivalTime}"/>
-                    <Text id="DepartureAirportCellValue" text="{DepartureAirport}"/>
-                    <Text id="DestinationAirportCellValue" text="{DestinationAirport}"/>
-                    <Text id="DistanceCellValue" text="{Distance} {DistanceUnit}"/>
-    
+                    <Text id="AirlineIDCellvalue" text="({_Connection/AirlineID})"/>
+                    <Text id="ConnectionIdCellValue" text="{_Connection/ConnectionID}"/>
+                    <Text id="DepartureTimeCellValue" text="{_Connection/DepartureTime}"/>
+                    <Text id="customerNameCellValue" text="{_Connection/ArrivalTime}"/>
+                    <Text id="DepartureAirportCellValue" text="{_Connection/DepartureAirport}"/>
+                    <Text id="DestinationAirportCellValue" text="{_Connection/DestinationAirport}"/>
+                    <Text id="DistanceCellValue" text="{_Connection/Distance} {_Connection/DistanceUnit}"/>
                 </cells>
             </ColumnListItem>
         </items>
-</Table>
+    </Table>
 </core:FragmentDefinition>
